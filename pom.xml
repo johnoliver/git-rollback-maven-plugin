@@ -8,7 +8,7 @@
 
 	<name>Git Rollback Maven Plugin</name>
 
-	<description>Provides a release rollback functionality that deletes and git tags created by a maven release</description>
+	<description>Provides a release rollback functionality that deletes git tags created by a maven release and rolls back the release</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
