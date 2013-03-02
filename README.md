@@ -1,7 +1,7 @@
 git-rollback-maven-plugin
 =========================
 
-Provides a release rollback functionality that deletes git tags created by a maven release and rolls back the release
+Provides a release rollback functionality that deletes git tags created by a maven release, rolls back the release and deletes any artifacts deployed as part of the release
 
 Usage
 =====
