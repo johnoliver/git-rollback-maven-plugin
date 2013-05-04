@@ -107,15 +107,38 @@ public class GitReleaseRollback extends AbstractMojo {
 
 	private Properties releaseProperties;
 
+	/**
+	 * Whether or not to delete the deployed artifact
+	 * 
+	 * @parameter
+	 */
+	protected boolean deleteArtifact = true;
 
+	/**
+	 * Whether or not to delete the git tag created
+	 * 
+	 * @parameter
+	 */
+	private boolean deleteTag = true;
+
+	/**
+	 * Whether or not to perform maven rollback
+	 * 
+	 * @parameter
+	 */
+	protected boolean performRollBack = true;
 
 	public void execute() throws MojoExecutionException {
 		baseDir = project.getBasedir();
 		releaseProperties = loadProperties();
 		
-		deleteTag();
-		deleteDeployment();
-		executeReleaseRollback();
+		
+		if(deleteTag)
+			deleteTag();
+		if(deleteArtifact)
+			deleteDeployment();
+		if(performRollBack)
+			executeReleaseRollback();
 	}
 
 	private void executeReleaseRollback() throws MojoExecutionException {
@@ -151,7 +174,7 @@ public class GitReleaseRollback extends AbstractMojo {
 		}
 	}
 	
-	private void deleteDeployment() {
+	protected void deleteDeployment() {
 		String version = releaseProperties.getProperty("project.rel."+project.getGroupId()+":"+project.getArtifactId());
 		
 		ArtifactRepository releaseArtifactRepository = getReleaseRepo();
