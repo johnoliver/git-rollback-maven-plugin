@@ -3,7 +3,7 @@
 
 	<groupId>org.jclarity</groupId>
 	<artifactId>git-rollback-maven-plugin</artifactId>
-	<version>1.2-SNAPSHOT</version>
+	<version>1.2</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>Git Rollback Maven Plugin</name>
