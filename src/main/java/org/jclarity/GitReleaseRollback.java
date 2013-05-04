@@ -119,7 +119,7 @@ public class GitReleaseRollback extends AbstractMojo {
 	 * 
 	 * @parameter
 	 */
-	private boolean deleteTag = true;
+	protected boolean deleteTag = true;
 
 	/**
 	 * Whether or not to perform maven rollback

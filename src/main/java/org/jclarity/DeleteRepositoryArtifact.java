@@ -27,7 +27,7 @@ import org.apache.maven.plugin.MojoExecutionException;
 public class DeleteRepositoryArtifact extends GitReleaseRollback {
 
 	public void execute() throws MojoExecutionException {
-		deleteArtifact = false;
+		deleteTag = false;
 		performRollBack = false;
 		super.execute();
 	}
